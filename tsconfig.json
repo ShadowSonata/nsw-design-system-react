@@ -9,9 +9,10 @@
     "forceConsistentCasingInFileNames": true,
     "module": "ES2020",
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "Node"
-    // "declaration": true,
-    // "declarationDir": "dist"
+    "moduleResolution": "Node",
+    "declaration": true,
+    "declarationDir": "dist"
   },
-  "include": ["stories"]
+  "include": ["src/**/*", "src/stories/accordion.stories.tsx"],
+  "exclude": ["node_modules", "build"] // ***
 }
