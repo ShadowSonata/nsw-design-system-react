@@ -2,11 +2,13 @@
   "name": "nsw-design-system-react-v2",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build": "rollup -c"
   },
   "keywords": [],
   "author": "",
@@ -33,6 +35,10 @@
     "rollup-plugin-typescript2": "^0.34.1",
     "rollup-plugin-uglify": "^6.0.4",
     "typescript": "^4.9.4"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "dependencies": {
     "nsw-design-system": "^3.2.4"

@@ -6,7 +6,7 @@ import { uglify } from "rollup-plugin-uglify";
 import { babel } from "@rollup/plugin-babel";
 
 export default {
-  input: "./index.ts",
+  input: "src/index.ts",
   output: [
     {
       file: "dist/index.js",
@@ -16,11 +16,15 @@ export default {
   plugins: [
     peerDepsExternal(),
     resolve(),
-    typescript(),
+    typescript({
+      tsconfigOverride: {
+        exclude: ["**/__tests__", "**/*.test.ts", "src/stories/*"],
+      },
+    }),
     postcss({
       extensions: [".css"],
     }),
     uglify(),
-    babel(),
+    babel({ babelHelpers: "bundled" }),
   ],
 };

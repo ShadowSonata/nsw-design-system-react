@@ -13,6 +13,6 @@
     "declaration": true,
     "declarationDir": "dist"
   },
-  "include": ["src/**/*", "src/stories/accordion.stories.tsx"],
-  "exclude": ["node_modules", "build"] // ***
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "build"]
 }
