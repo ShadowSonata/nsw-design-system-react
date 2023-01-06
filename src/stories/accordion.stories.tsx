@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  Accordion as AccordionComponent,
-  AccordionGroup,
-} from "../component/accordion/accordion";
+import { Accordion as AccordionComponent, AccordionGroup } from "..";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
@@ -11,11 +8,18 @@ export default {
   subcomponents: { AccordionComponent },
 } as ComponentMeta<typeof AccordionComponent>;
 
-const Template = (args) => (
+// TODO: settle this
+// @ts-ignore
+const Template: ComponentStory<{ items: typeof AccordionComponent[] }> = (
+  args
+) => (
   <AccordionGroup>
-    {args.items.map((item, index) => (
-      <AccordionComponent key={index} body={item.body} header={item.header} />
-    ))}
+    {
+      // @ts-ignore
+      args.items.map((item, index) => (
+        <AccordionComponent key={index} body={item.body} header={item.header} />
+      ))
+    }
   </AccordionGroup>
 );
 
