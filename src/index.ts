@@ -16,6 +16,7 @@ import GlobalAlert from "./component/GlobalAlert";
 import Header, { Masthead, SkipTo } from "./component/Header";
 import HeroBanner, { HeroBannerList } from "./component/HeroBanner";
 import InPageNavigation from "./component/InPageNavigation";
+import LinkList from "./component/LinkList";
 
 export {
   Accordion,
@@ -39,4 +40,5 @@ export {
   HeroBanner,
   HeroBannerList,
   InPageNavigation,
+  LinkList,
 };
