@@ -14,6 +14,7 @@ import Footer, {
 } from "./component/Footer";
 import GlobalAlert from "./component/GlobalAlert";
 import Header, { Masthead, SkipTo } from "./component/Header";
+import HeroBanner, { HeroBannerList } from "./component/HeroBanner";
 
 export {
   Accordion,
@@ -34,4 +35,6 @@ export {
   Header,
   Masthead,
   SkipTo,
+  HeroBanner,
+  HeroBannerList,
 };
