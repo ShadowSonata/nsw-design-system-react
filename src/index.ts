@@ -23,6 +23,7 @@ import Pagination, {
   PaginationEllipsis,
   PaginationItem,
 } from "./component/Pagination";
+import Section from "./component/Section";
 
 export {
   Accordion,
@@ -52,4 +53,5 @@ export {
   Pagination,
   PaginationEllipsis,
   PaginationItem,
+  Section,
 };
