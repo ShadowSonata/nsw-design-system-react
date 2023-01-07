@@ -19,6 +19,10 @@ import InPageNavigation from "./component/InPageNavigation";
 import LinkList from "./component/LinkList";
 import MainNav from "./component/MainNav";
 import Media from "./component/Media";
+import Pagination, {
+  PaginationEllipsis,
+  PaginationItem,
+} from "./component/Pagination";
 
 export {
   Accordion,
@@ -45,4 +49,7 @@ export {
   LinkList,
   MainNav,
   Media,
+  Pagination,
+  PaginationEllipsis,
+  PaginationItem,
 };
