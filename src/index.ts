@@ -13,6 +13,7 @@ import Footer, {
   FooterLinks,
 } from "./component/Footer";
 import GlobalAlert from "./component/GlobalAlert";
+import Header, { Masthead, SkipTo } from "./component/Header";
 
 export {
   Accordion,
@@ -30,4 +31,7 @@ export {
   FooterLower,
   FooterLinks,
   GlobalAlert,
+  Header,
+  Masthead,
+  SkipTo,
 };
