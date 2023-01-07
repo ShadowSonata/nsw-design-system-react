@@ -24,6 +24,7 @@ import Pagination, {
   PaginationItem,
 } from "./component/Pagination";
 import Section from "./component/Section";
+import Table, { TableResponsiveWrapper } from "./component/Table";
 
 export {
   Accordion,
@@ -54,4 +55,6 @@ export {
   PaginationEllipsis,
   PaginationItem,
   Section,
+  Table,
+  TableResponsiveWrapper,
 };
