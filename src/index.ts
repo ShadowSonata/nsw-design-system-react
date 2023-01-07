@@ -5,6 +5,7 @@ import Breadcrumbs from "./component/Breadcrumbs";
 import Button from "./component/Button";
 import Callout from "./component/Callout";
 import Card, { CardCopy } from "./component/Card";
+import ContentBlock from "./component/ContentBlock";
 export {
   Accordion,
   AccordionGroup,
@@ -14,4 +15,5 @@ export {
   Callout,
   Card,
   CardCopy,
+  ContentBlock,
 };
