@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import nextId from "react-id-generator";
 
 interface AccordionProps {
   header: string;
@@ -10,14 +11,9 @@ interface AccordionGroupProps {
   children?: React.ReactNode;
 }
 
-const uniqueId = (prefix: string) => {
-  const prefixValue = prefix === undefined ? "nsw" : prefix;
-  return `${prefixValue}-${Math.random().toString(36).substring(2, 16)}`;
-};
-
 export function Accordion({ header, body, className = "" }: AccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const uID = uniqueId("accordion");
+  const uID = nextId("accordion");
   return (
     <React.Fragment>
       <div className={`nsw-accordion__title ${className}`}>
