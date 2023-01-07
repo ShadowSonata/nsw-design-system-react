@@ -42,6 +42,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "nsw-design-system": "^3.2.4"
+    "nsw-design-system": "^3.2.4",
+    "react-id-generator": "^3.0.2"
   }
 }
