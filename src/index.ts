@@ -25,6 +25,7 @@ import Pagination, {
 } from "./component/Pagination";
 import Section from "./component/Section";
 import Table, { TableResponsiveWrapper } from "./component/Table";
+import TagList from "./component/TagList";
 
 export {
   Accordion,
@@ -57,4 +58,5 @@ export {
   Section,
   Table,
   TableResponsiveWrapper,
+  TagList,
 };
