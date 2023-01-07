@@ -12,6 +12,7 @@ import Footer, {
   FooterLower,
   FooterLinks,
 } from "./component/Footer";
+import GlobalAlert from "./component/GlobalAlert";
 
 export {
   Accordion,
@@ -28,4 +29,5 @@ export {
   FooterSectionGroup,
   FooterLower,
   FooterLinks,
+  GlobalAlert,
 };
