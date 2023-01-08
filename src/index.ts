@@ -25,6 +25,7 @@ import Pagination, {
 } from "./component/Pagination";
 import Section from "./component/Section";
 import Table, { TableResponsiveWrapper } from "./component/Table";
+import Tabs, { TabItem, TabItemWrapper, TabSection } from "./component/Tabs";
 import TagList from "./component/TagList";
 
 export {
@@ -58,5 +59,9 @@ export {
   Section,
   Table,
   TableResponsiveWrapper,
+  Tabs,
+  TabItemWrapper,
+  TabItem,
+  TabSection,
   TagList,
 };
