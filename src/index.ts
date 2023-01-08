@@ -12,6 +12,17 @@ import Footer, {
   FooterLower,
   FooterLinks,
 } from "./component/Footer";
+import {
+  FormGroup,
+  FormGroupCheckbox,
+  FormGroupRadio,
+  FormGroupSelect,
+  FormGroupText,
+  ProgressIndicator,
+  Select,
+  SelectItem,
+  TextInput,
+} from "./component/Forms";
 import GlobalAlert from "./component/GlobalAlert";
 import Header, { Masthead, SkipTo } from "./component/Header";
 import HeroBanner, { HeroBannerList } from "./component/HeroBanner";
@@ -43,6 +54,11 @@ export {
   FooterSectionGroup,
   FooterLower,
   FooterLinks,
+  FormGroup,
+  FormGroupCheckbox,
+  FormGroupRadio,
+  FormGroupSelect,
+  FormGroupText,
   GlobalAlert,
   Header,
   Masthead,
@@ -56,6 +72,7 @@ export {
   Pagination,
   PaginationEllipsis,
   PaginationItem,
+  ProgressIndicator,
   Section,
   Table,
   TableResponsiveWrapper,
@@ -64,4 +81,7 @@ export {
   TabItem,
   TabSection,
   TagList,
+  TextInput,
+  Select,
+  SelectItem,
 };
