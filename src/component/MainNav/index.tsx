@@ -28,24 +28,35 @@ export interface MainNavProps {
   megaMenu?: boolean;
   navItems: NavItem[];
   className?: string;
+  mobileNavOpen?: boolean;
+  toggleMobileNav?: () => void;
 }
 
 export default function MainNav({
   navItems,
   megaMenu,
-  className,
+  className = "",
+  mobileNavOpen,
+  toggleMobileNav,
 }: MainNavProps) {
   const [isNavOpen, setNavOpen] = useState(false);
-  console.log("navItems", navItems);
+  const [activeIndex, setActiveIndex] = useState(0);
   return (
     <nav
       id="main-nav"
-      className={`nsw-main-nav ${className} ${megaMenu ? "js-mega-menu" : ""}`}
+      className={`nsw-main-nav ${className} ${megaMenu ? "js-mega-menu" : ""} ${
+        mobileNavOpen ? "active" : ""
+      }`}
       aria-label="Main Navigation"
     >
       <div className="nsw-main-nav__header">
         <div id="nsw-main-nav__title">Menu</div>
-        <button type="button" className="nsw-icon-buttons" aria-expanded="true">
+        <button
+          type="button"
+          className="nsw-icon-buttons"
+          aria-expanded="true"
+          onClick={toggleMobileNav}
+        >
           <span
             className="material-icons nsw-material-icons"
             aria-hidden="true"
@@ -56,39 +67,54 @@ export default function MainNav({
         </button>
       </div>
       <ul className="nsw-main-nav__list">
-        {navItems.map((navItem) => (
-          <li
-            key={nextId()}
-            onClick={(e: React.SyntheticEvent) => {
-              e.preventDefault();
-              setNavOpen(!isNavOpen);
-            }}
-          >
-            <a href={navItem.url} role="button">
-              <span>{navItem.text}</span>
-              {navItem.subNav ? (
-                <span
-                  className="material-icons nsw-material-icons nsw-main-nav__link-icon"
-                  aria-hidden="true"
-                >
-                  keyboard_arrow_right
-                </span>
-              ) : (
-                ""
+        {navItems.map((navItem, navItemIndex) => {
+          const isNavItemActive = isNavOpen && activeIndex === navItemIndex;
+          return (
+            <li
+              key={nextId()}
+              onClick={(e: React.SyntheticEvent) => {
+                if (!navItem.subNav) return;
+                e.preventDefault();
+                // don't do anything if it is level 1 item only (no subnav)
+                if (!isNavOpen) {
+                  setActiveIndex(navItemIndex);
+                  setNavOpen(true);
+                } else {
+                  setNavOpen(false);
+                }
+              }}
+            >
+              <a
+                href={navItem.url}
+                role="button"
+                aria-expanded={isNavItemActive}
+                className={isNavItemActive ? "active" : ""}
+              >
+                <span>{navItem.text}</span>
+                {navItem.subNav ? (
+                  <span
+                    className="material-icons nsw-material-icons nsw-main-nav__link-icon"
+                    aria-hidden="true"
+                  >
+                    keyboard_arrow_right
+                  </span>
+                ) : (
+                  ""
+                )}
+              </a>
+              {navItem.subNav && (
+                <SubNav
+                  subNav={navItem.subNav}
+                  url={navItem.url}
+                  text={navItem.text}
+                  description={navItem.description}
+                  id={navItem.id}
+                  className={isNavItemActive ? "active" : ""}
+                />
               )}
-            </a>
-            {navItem.subNav && (
-              <SubNav
-                subNav={navItem.subNav}
-                url={navItem.url}
-                text={navItem.text}
-                description={navItem.description}
-                id={navItem.id}
-                className={isNavOpen ? "active" : ""}
-              />
-            )}
-          </li>
-        ))}
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

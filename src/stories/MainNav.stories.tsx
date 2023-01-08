@@ -8,16 +8,15 @@ export default {
 } as ComponentMeta<typeof MainNav>;
 
 const megaNavTemplate: ComponentStory<typeof MainNav> = (args) => (
-  <>
-    <Header
-      headerUrl="#"
-      mobile={true}
-      onSubmit={() => {}}
-      search={false}
-      siteTitle="digital.nsw"
-    />
+  <Header
+    headerUrl="#"
+    mobile={true}
+    onSubmit={() => {}}
+    search={false}
+    siteTitle="digital.nsw"
+  >
     <MainNav {...args} />
-  </>
+  </Header>
 );
 export const MegaNavigation = megaNavTemplate.bind({});
 MegaNavigation.args = {
@@ -197,7 +196,7 @@ MegaNavigation.args = {
     },
     {
       text: "Contact us",
-      url: "/index.html#contact-us",
+      url: "https://www.google.com",
       id: "017200ca",
     },
   ],

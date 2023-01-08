@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Masthead } from "./Masthead";
 import { SkipTo } from "./SkipTo";
 
@@ -10,6 +10,7 @@ interface HeaderProps {
   mobile?: boolean;
   search?: boolean;
   onSubmit?(event: React.SyntheticEvent): void;
+  children?: React.ReactNode;
 }
 
 export default function Header({
@@ -20,7 +21,12 @@ export default function Header({
   mobile = true,
   search = true,
   onSubmit,
+  children,
 }: HeaderProps) {
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const toggleMobileNav = () => setMobileNavOpen(!mobileNavOpen);
+  const toggleHeaderSearch = () => setSearchOpen(!searchOpen);
   return (
     <React.Fragment>
       <header className="nsw-header">
@@ -73,13 +79,14 @@ export default function Header({
                 </div>
               )}
             </div>
-            {mobile ? (
+            {mobile && (
               <div className="nsw-header__menu">
                 <button
                   type="button"
                   className="js-open-nav"
-                  aria-expanded="false"
+                  aria-expanded={mobileNavOpen}
                   aria-controls="main-nav"
+                  onClick={toggleMobileNav}
                 >
                   <span
                     className="material-icons nsw-material-icons"
@@ -92,16 +99,16 @@ export default function Header({
                   </span>
                 </button>
               </div>
-            ) : (
-              ""
             )}
-            {search ? (
+            {search && (
               <div className="nsw-header__search">
                 <button
                   type="button"
                   className="js-open-search"
-                  aria-expanded="false"
+                  aria-expanded={searchOpen}
                   aria-controls="header-search"
+                  onClick={toggleHeaderSearch}
+                  hidden={searchOpen}
                 >
                   <span
                     className="material-icons nsw-material-icons"
@@ -114,15 +121,13 @@ export default function Header({
                   </span>
                 </button>
               </div>
-            ) : (
-              ""
             )}
           </div>
           {search ? (
             <div
               id="header-search"
               className="nsw-header__search-area js-search-area"
-              hidden
+              hidden={!searchOpen}
             >
               <form role="search" onSubmit={onSubmit}>
                 <label htmlFor="nsw-header-input" className="sr-only">
@@ -152,6 +157,7 @@ export default function Header({
                 className="nsw-icon-button js-close-search"
                 aria-expanded="true"
                 aria-controls="header-search"
+                onClick={toggleHeaderSearch}
               >
                 <span
                   className="material-icons nsw-material-icons nsw-search__close-icon"
@@ -167,6 +173,12 @@ export default function Header({
           )}
         </div>
       </header>
+      {React.Children.map(children, (child) =>
+        React.cloneElement(child as React.ReactElement, {
+          mobileNavOpen,
+          toggleMobileNav,
+        })
+      )}
     </React.Fragment>
   );
 }
