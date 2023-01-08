@@ -9,7 +9,7 @@ import {
 } from "..";
 
 export default {
-  title: "Content/Footer",
+  title: "Global/Footer",
   components: Footer,
   subcomponents: { FooterUpper, FooterLower, FooterLinks, FooterSectionGroup },
 } as ComponentMeta<typeof Footer>;
