@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Masthead } from "./Masthead";
-import { SkipTo } from "./SkipTo";
+import Masthead from "./Masthead";
+import SkipTo from "./SkipTo";
 
 interface HeaderProps {
   siteTitle?: string;

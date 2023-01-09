@@ -5,7 +5,7 @@ interface SkipToProps {
   content: string;
 }
 
-export const SkipTo = ({ nav, content }: SkipToProps) => (
+const SkipTo = ({ nav, content }: SkipToProps) => (
   <nav className="nsw-skip" aria-label="Skip to links">
     <a href={nav}>
       <span>Skip to navigation</span>
@@ -15,3 +15,5 @@ export const SkipTo = ({ nav, content }: SkipToProps) => (
     </a>
   </nav>
 );
+
+export default SkipTo;
