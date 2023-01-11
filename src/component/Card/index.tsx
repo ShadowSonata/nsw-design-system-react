@@ -2,7 +2,7 @@ import React from "react";
 
 export interface CardProps {
   link?: string;
-  style: "dark" | "light" | "white";
+  style?: "dark" | "light" | "white";
   tag?: string;
   date?: string;
   image?: string;
