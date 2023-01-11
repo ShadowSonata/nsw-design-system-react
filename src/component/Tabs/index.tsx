@@ -21,7 +21,7 @@ function Tabs({ className = "", children }: TabsProps) {
       });
     } else {
       return React.cloneElement(child as React.ReactElement<any>, {
-        active: index === tabIndex + 1,
+        active: index === tabIndex + 1 ? true : false,
       });
     }
   });
