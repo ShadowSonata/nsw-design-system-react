@@ -5,24 +5,18 @@ This is adapted from the original [NSW Design System React Library](https://gith
 ## Install
 
 ```bash
-npm install nsw-ds-react nsw-design-system
+npm install @shadowsonata/nsw-ds-react
 ```
 
-Add the styles separately in your main `App.js` file
+Add the styles separately in your main app file entry:
 
 ```js
 import "nsw-design-system/dist/css/main.css";
 ```
 
-In your `index.html` document add this line of code inside the `<head>` tag. Or install [icon](https://www.npmjs.com/package/material-icons) and [font](https://www.npmjs.com/package/@fontsource/public-sans) from npm
-
-```
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-```
-
 ## Usage
 
+Storybook coming soon... In the meantime you can use the storybook code in the repository.
 Refer to individual components' usage in [Storybook](https://digitalnsw.github.io/nsw-design-system-react)
 
 Here's how you import the component:
@@ -40,6 +34,10 @@ function Example() {
   );
 }
 ```
+
+## API Update
+
+(Coming soon)
 
 ## License
 

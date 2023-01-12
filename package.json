@@ -1,18 +1,26 @@
 {
-  "name": "nsw-design-system-react-v2",
+  "name": "@shadowsonata/nsw-ds-react",
   "version": "1.0.0",
-  "description": "",
+  "description": "An alternative version of NSW Design System React",
   "type": "module",
-  "main": "index.js",
+  "homepage": "https://github.com/ShadowSonata/nsw-design-system-react",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "rollup -c"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "nsw-design-system",
+    "react",
+    "typescript"
+  ],
+  "author": "Darren Zhang <darrenalive@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@rollup/plugin-babel": "^6.0.3",
