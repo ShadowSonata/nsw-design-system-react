@@ -67,7 +67,7 @@ export default function MainNav({
         </button>
       </div>
       <ul className="nsw-main-nav__list">
-        {navItems.map((navItem, navItemIndex) => {
+        {navItems?.map((navItem, navItemIndex) => {
           const isNavItemActive = isNavOpen && activeIndex === navItemIndex;
           return (
             <li
@@ -195,7 +195,7 @@ export const SubNav = ({
       />
       <ul className="nsw-main-nav__sub-list">
         {subNav.map((Level2Nav) => (
-          <li key={nextId()}>
+          <li key={nextId()} onClick={(e) => e.stopPropagation()}>
             <a href={Level2Nav.url}>
               <span>{Level2Nav.text}</span>
               {Level2Nav.subNav ? (
